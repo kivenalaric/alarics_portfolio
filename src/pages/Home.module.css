@@ -187,18 +187,18 @@
 }
 
 /* ── Responsive ── */
+/* Tablet */
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
     padding-block: 3rem;
   }
 
-  /* Stack: image becomes a tall banner at top, text below */
   .heroImage {
     position: relative;
     width: 100%;
-    height: 55vw;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+    height: clamp(280px, 65vw, 420px);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 88%, 0% 100%);
     inset: unset;
   }
 
@@ -208,5 +208,16 @@
 
   .heroText {
     max-width: 100%;
+  }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+  .heroImage {
+    height: clamp(300px, 80vw, 360px);
+  }
+
+  .name {
+    font-size: clamp(2.2rem, 10vw, 2.8rem);
   }
 }
