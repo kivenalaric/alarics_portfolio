@@ -27,6 +27,6 @@ export const projects = [
     tags: ['React', 'Framer Motion', 'React Router', 'CSS Modules'],
     liveUrl: 'https://alarics-portfolio.vercel.app/',
     repoUrl: 'https://github.com/kivenalaric',
-    featured: false,
+    featured: true,
   },
 ]
