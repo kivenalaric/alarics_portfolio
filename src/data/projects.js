@@ -13,7 +13,7 @@ export const projects = [
     id: 2,
     title: 'Recipe App',
     description:
-      'A full CRUD recipe manager built with React. Users can create, read, edit, and delete recipes — demonstrating clean state management and component composition.',
+      'A full CRUD recipe manager built with React. Users can create, read, edit, and delete recipes, demonstrating clean state management and component composition.',
     tags: ['React', 'JavaScript', 'CSS'],
     liveUrl: 'https://deploy-preview-1--luxury-baklava-cbc2a5.netlify.app/',
     repoUrl: 'https://github.com/kivenalaric/recipe-app',
@@ -23,7 +23,7 @@ export const projects = [
     id: 3,
     title: 'Developer Portfolio',
     description:
-      'This very portfolio — built with React, React Router, and Framer Motion. Dark minimal aesthetic with electric blue accents and smooth page transitions.',
+      'This very portfolio, built with React, React Router, and Framer Motion. Dark minimal aesthetic with electric blue accents and smooth page transitions.',
     tags: ['React', 'Framer Motion', 'React Router', 'CSS Modules'],
     liveUrl: 'https://alarics-portfolio.vercel.app/',
     repoUrl: 'https://github.com/kivenalaric',
