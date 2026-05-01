@@ -1,2 +1,18 @@
 
 node_modules/
+# Build output
+dist/
+dist-ssr/
+
+# Vite cache
+.vite/
+
+# Env files (keep secrets out of git)
+.env
+.env.local
+.env.*.local
+
+# Editor
+.DS_Store
+*.local
+
