@@ -25,7 +25,7 @@ export const projects = [
     description:
       'This very portfolio — built with React, React Router, and Framer Motion. Dark minimal aesthetic with electric blue accents and smooth page transitions.',
     tags: ['React', 'Framer Motion', 'React Router', 'CSS Modules'],
-    liveUrl: null,
+    liveUrl: 'https://alarics-portfolio.vercel.app/',
     repoUrl: 'https://github.com/kivenalaric',
     featured: false,
   },
