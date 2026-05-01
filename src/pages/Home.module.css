@@ -1,0 +1,212 @@
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--nav-h));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Text sits above the image panel */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding-block: 5rem 3rem;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  /* occupies left ~52% — leaves room for the image panel */
+  max-width: 52%;
+}
+
+/* ── Image panel — full height, diagonal left edge ── */
+.heroImage {
+  position: absolute;
+  inset: 0 0 0 auto;   /* right: 0, top: 0, bottom: 0 */
+  width: 52%;
+  z-index: 1;
+
+  /*
+   * Diagonal cut: top-left starts 15% in from the panel's own left edge,
+   * bottom-left sits flush at 0% — creates the slant going top-right → bottom-left
+   */
+  clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.heroImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Subtle blue vignette on the left edge of the image panel
+   so it blends into the background rather than hard-cutting */
+.heroImage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to right,
+    var(--bg) 0%,
+    transparent 30%
+  );
+  pointer-events: none;
+}
+
+/* ── Available badge ── */
+.available {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* ── Name ── */
+.name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.nameAccent {
+  color: var(--accent);
+  text-shadow: 0 0 48px var(--accent-glow);
+}
+
+/* ── Role ── */
+.role {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+}
+
+/* ── Tagline ── */
+.tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+}
+
+.taglineAccent {
+  color: var(--accent);
+}
+
+/* ── CTAs ── */
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: all 0.22s ease;
+  cursor: pointer;
+}
+
+.btnPrimary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 18px var(--accent-glow);
+}
+
+.btnPrimary:hover {
+  background: #2563eb;
+  box-shadow: 0 0 28px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btnSecondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ── Skills strip ── */
+.skillsSection {
+  padding-block: 4rem;
+  border-top: 1px solid var(--border);
+}
+
+.skillsLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-block: 3rem;
+  }
+
+  /* Stack: image becomes a tall banner at top, text below */
+  .heroImage {
+    position: relative;
+    width: 100%;
+    height: 55vw;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+    inset: unset;
+  }
+
+  .heroContent {
+    padding-block: 2rem 3rem;
+  }
+
+  .heroText {
+    max-width: 100%;
+  }
+}
