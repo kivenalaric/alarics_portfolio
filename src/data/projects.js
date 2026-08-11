@@ -1,5 +1,15 @@
 export const projects = [
   {
+    id: 4,
+    title: 'GoTravel',
+    description:
+      'A curated travel guide built with Astro and Tailwind CSS. Showcases handpicked experiences, resorts, and insider tips for a destination, with affiliate booking links and a fully static, fast-loading build.',
+    tags: ['Astro', 'Tailwind CSS', 'JavaScript', 'Static Site'],
+    liveUrl: 'https://go-travel-chi.vercel.app/',
+    repoUrl: 'https://github.com/kivenalaric/GoTravel',
+    featured: true,
+  },
+  {
     id: 1,
     title: 'WeatherP',
     description:
